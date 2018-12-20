@@ -1,5 +1,5 @@
-function safe_check_hw(hw)
-% function safe_check_hw(hw)
+function safe_hw_check(hw)
+% function safe_hw_check(hw)
 %
 % Make sure that all is well with the hardware configuration.
 
