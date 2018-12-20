@@ -29,7 +29,7 @@ if doPadding
     gwf = [[0 0 0]; gwf; zwf];
 end
 
-safe_check_hw(hw);
+safe_hw_check(hw);
 
 dgdt = diff(gwf,1) / dt;
 

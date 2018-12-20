@@ -13,8 +13,10 @@ https://cds.ismrm.org/ismrm-2000/PDF7/2007.PDF
 
 The main SAFE-model was coded by Thomas Witzel @ Martinos Center,
 MGH, HMS, Boston, MA, USA.
+twitzel@mgh.harvard.edu
 
-The code was adapted/expanded by Filip Szczepankiewicz @ LMI
+Remaining code was written by Filip Szczepankiewicz @ LMI
 BWH, HMS, Boston, MA, USA.
+fszczepankiewicz@bwh.harvard.edu
 
 Contact either of the authors for more information. 
