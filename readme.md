@@ -5,7 +5,7 @@ validated in any way, and results should be interpreted with care.
 NOTE: The characterization of the hardware IS NOT PART OF THIS CODE! These
 parameters must be supplied by the user.
 
-The PNS model is based on the SAFE-abstract;
+The PNS model is based on the SAFE-abstract:
 SAFE-Model - A New Method for Predicting Peripheral Nerve Stimulations in MRI
 by Franz X. Herbank and Matthias Gebhardt. Abstract No 2007. 
 Proc. Intl. Soc. Mag. Res. Med. 8, 2000, Denver, Colorado, USA
