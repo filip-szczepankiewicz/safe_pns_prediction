@@ -19,7 +19,7 @@ hold on; grid on;
 ylim([0 120])
 xlim([min(t) max(t)])
 
-title('PNS');
+title('Predicted PNS');
 
 xlabel (xlabstr)
 ylabel ('Relative stimulation [%]')
