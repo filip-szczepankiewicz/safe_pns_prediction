@@ -2,16 +2,14 @@ function sys_name = safe_hw_verify(hw)
 % function sys_name = safe_hw_verify(hw)
 %
 % This function checks if the input hardware specification is the same as
-% one of the specs in Filips library by comparing sha keys.
+% one of the specs in Filip's library by comparing sha keys.
 %
 % Example:
 % safe_hw_verify(safe_example_hw());
 %
 % The hardware specification matches the system: EXAMPLE_SYS
 
-
 sha = safe_hw_to_sha(hw);
-
 
 switch sha
     
