@@ -7,32 +7,55 @@ function sys_name = safe_hw_verify(hw)
 % Example:
 % safe_hw_verify(safe_example_hw());
 %
-% The hardware specification matches the system: EXAMPLE_SYS
+% Specification matches: EXAMPLE_SYS (#checksum)(variant 1)
 
 sha = safe_hw_to_sha(hw);
 
 switch sha
     
-    case '64D3974352B31CD63152A4C13E89AF75DC2EB4142445B401D1FD7B79BA8C2C07'
-        sys_name = 'EXAMPLE_SYS';
+    case '6CEA231F642CB0B0F4A68CC531FCFCC043321752A250F3F4618761DDE0B557E6'
+        name = 'EXAMPLE_SYS (#checksum)';
+        variant = 1;
         
-    case '3BF8B9B16EE367ED357B15EE50372C1B212507C1C7C5D503FF4AEA7217C30ABD'
-        sys_name = 'AERA-XJ';
+    case '09E62D18B5A3BB554A475F734A9307E8BE2E8BA570EFE9285CFC87B1C6DE56FA'
+        name = 'MP_GPA_K2259_1500V_550A_AS05 (3046993442)';
+        variant = 1;
         
-    case '5C881015F8B048B0AB8179B6EAAC083189A9F6270D4299F2BF973B83F82F5ECC'
-        sys_name = 'AERA-XQ';
+    case '06228A0FDEC64BADEE17DEF134E26EEC9DD4101EC270DCE0191F9CA8CC8903C9'
+        name = 'MP_GPA_K2279_1200V_150A_GC60 (3418571724)';
+        variant = 1;
         
-    case '712BE9E2CE24F537B5CF77DD149F80163EF182FAAA1942A0FD9B7A2C837489F8'
-        sys_name = 'SKYRA-XQ';
+    case '9D07DDAFF7FFB05D34FF03D85AF43ABEBD531B2E114CDE8A8BBB4435A72B9413'
+        name = 'MP_GPA_K2279_1200V_150A_GC60_FB (921432508)';
+        variant = 1;
         
     case 'FEE500C04F43820B12E40557EBD2180C9D7C31DA165C2165E67B1900C58FC0AD'
-        sys_name = 'SKYRAFIT';
+        name = 'MP_GPA_K2298_2250V_950A_AS097 (3885005186)';
+        variant = 1;
+        
+    case '3BF8B9B16EE367ED357B15EE50372C1B212507C1C7C5D503FF4AEA7217C30ABD'
+        name = 'MP_GPA_K2309_2000V_651A_GC98Q (3834555520)';
+        variant = 1;
+        
+    case '712BE9E2CE24F537B5CF77DD149F80163EF182FAAA1942A0FD9B7A2C837489F8'
+        name = 'MP_GPA_K2309_2000V_651A_GC99 (3711535605)';
+        variant = 1;
         
     case '95654E4F6080D4710B37400E74F96E2669119BA0D675CF6DE208F58FEF6558BB'
-        sys_name = 'PRISMA-XR';
+        name = 'MP_GPA_K2309_2250V_951A_AS82 (499993810)';
+        variant = 1;
+        
+    case '5C881015F8B048B0AB8179B6EAAC083189A9F6270D4299F2BF973B83F82F5ECC'
+        name = 'MP_GPA_K2309_2250V_951A_GC98SQ (3417715184)';
+        variant = 1;
+        
+    case 'CBCE8708AE27E5838986134B957E724E1DFE30036EB0E88DBEBBB02CC82277A4'
+        name = 'MP_GPA_K2309_2250V_951A_AS82 (2217737351)';
+        variant = 2;
         
     case '91CAD85FCF93E1F22A3D7078B1092FE4C76E5FFF06BF42D0314816A2884BE597'
-        sys_name = 'CONNECTOME300';
+        name = 'CONNECTOME300';
+        variant = 1;
         
     otherwise
         error('Hardware specification not part of known systems!')
@@ -41,6 +64,6 @@ end
 
 
 if nargout < 1
-    disp(['The hardware specification matches the system: ' sys_name]);
+    disp(['Specification matches: ' name '(variant ' num2str(variant) ')']);
 end
 
