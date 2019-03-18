@@ -1,6 +1,13 @@
 function [gwf, dt] = safe_example_gwf()
 % function [gwf, dt] = safe_example_gwf()
 % Waveform with some frequency matching by Filip Szczepankiewicz.
+%
+% Waveform was optimized in the NOW framework by Jens Sjölund et al.
+% https://github.com/jsjol/NOW
+%
+% Optimization was Maxwell-compensated to remove effects of concomitant
+% gradients.
+% https://arxiv.org/ftp/arxiv/papers/1903/1903.03357.pdf
 
 %% STE
 dt  = 1e-3; % ms
