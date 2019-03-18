@@ -18,3 +18,6 @@ Remaining code was written by Filip Szczepankiewicz @ LMI, BWH, HMS, Boston, MA,
 fszczepankiewicz@bwh.harvard.edu
 
 Contact either of the authors for more information. 
+
+
+![The input is an arbitrary gradient waveform, and the prediction is returned in relative units of what a specific hardware configuration will allow.](safe_example_figure.png)
