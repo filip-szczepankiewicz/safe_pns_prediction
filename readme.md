@@ -20,5 +20,5 @@ fszczepankiewicz@bwh.harvard.edu
 Contact either of the authors for more information. 
 
 
-![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.png)
+![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.jpg)
 
