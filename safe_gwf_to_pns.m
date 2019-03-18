@@ -24,9 +24,10 @@ if nargin < 4
 end
 
 if doPadding
-    zpt = safe_longest_time_const(hw) * 2 / 1000; % s;
-    zwf = zeros(round(zpt/dt),3);
-    gwf = [[0 0 0]; gwf; zwf];
+    zpt = safe_longest_time_const(hw) * 4 / 1000; % s;
+    zp1 = zeros(round(zpt/4/dt),3);
+    zp2 = zeros(round(zpt/1/dt),3);
+    gwf = [zp1; gwf; zp2];
 end
 
 safe_hw_check(hw);
