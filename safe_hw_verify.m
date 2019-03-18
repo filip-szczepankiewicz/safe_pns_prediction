@@ -1,5 +1,5 @@
 function [name, variant] = safe_hw_verify(hw)
-% function sys_name = safe_hw_verify(hw)
+% function [name, variant] = safe_hw_verify(hw)
 %
 % This function checks if the input hardware specification is the same as
 % one of the specs in Filip's library by comparing sha keys.
