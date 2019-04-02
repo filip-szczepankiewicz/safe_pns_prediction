@@ -17,7 +17,7 @@ twitzel@mgh.harvard.edu
 Remaining code was written by Filip Szczepankiewicz @ LMI, BWH, HMS, Boston, MA, USA.
 fszczepankiewicz@bwh.harvard.edu
 
-Contact either of the authors for more information. 
+Contact either of the authors, or go to the [IDEA forum](https://www.mr-idea.com/communities/idea/Lists/Discussion/Flat.aspx?RootFolder=%2Fcommunities%2Fidea%2FLists%2FDiscussion%2FPNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model&FolderCTID=0x012002005635B5AD41B3E240BA0B9023C8B21F60), for more information.
 
 
 ![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.jpg)
