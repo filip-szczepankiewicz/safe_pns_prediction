@@ -3,7 +3,7 @@ based on any given hardware configuration. This code is not verified or
 validated in any way, and results should be interpreted with care.
 
 NOTE: The characterization of the hardware IS NOT PART OF THIS CODE! These
-parameters must be supplied by the user or be requested on the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model) or by [email](fszczepankiewicz@bwh.harvard.edu).
+parameters must be supplied by the user or be requested on the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model) or by [email](mailto:fszczepankiewicz@bwh.harvard.edu).
 
 The PNS model is based on the SAFE-abstract:
 SAFE-Model - A New Method for Predicting Peripheral Nerve Stimulations in MRI
@@ -20,5 +20,5 @@ fszczepankiewicz@bwh.harvard.edu
 Contact either of the authors, or go to the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model), for more information.
 
 
-![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.jpg | width=300)
+![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.jpg)
 
