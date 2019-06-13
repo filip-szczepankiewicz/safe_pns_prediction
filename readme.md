@@ -25,4 +25,6 @@ Proc. Intl. Soc. Mag. Res. Med. 8, 2000, Denver, Colorado, USA](https://cds.ismr
 If you use these resources, please also consider citing:  
 [Szczepankiewicz F, Westin, C-F, Nilsson M. Maxwell-compensated design of asymmetric gradient waveforms for tensor-valued diffusion encoding. Magn Reson Med. 2019;00:1–14. https://doi.org/10.1002/mrm.27828](https://onlinelibrary.wiley.com/doi/abs/10.1002/mrm.27828)
 
+
+### Example predicted PNS from STE gradient waveform
 ![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.jpg)
