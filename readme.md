@@ -30,3 +30,12 @@ If you use these resources, please also consider citing:
 ![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.jpg)
 
 The example gradient waveform yields spherical diffusion encoding, and taken by itself (ignoring the imaging gradients and the readout) it causes approximately 80% of the allowed PNS. Therefore, this waveform should be usable with respect to the PNS.
+
+### Related resources
+[YouTube video on the benefit of using tensor-valued diffusion encoding (fat b-tensors)](https://www.youtube.com/watch?v=o4LYijV90Tg&t=1241s)  
+[Multidimensional analysis framework (MD-dMRI)](https://github.com/markus-nilsson/md-dmri)  
+[Gradient waveform optimization for tensor-valued encoding (NOW)](https://github.com/jsjol/NOW)  
+[Concomitant gradient analysis tools (CFA)](https://github.com/markus-nilsson/md-dmri/tree/master/tools/cfa)  
+[Free waveform sequence header extraction tools](https://github.com/filip-szczepankiewicz/fwf_header_tools)  
+[Examples of brain protocols and performance at multiple systems](https://github.com/filip-szczepankiewicz/Szczepankiewicz_PONE_2019)  
+[Open source tensor-valued diffusion encoded data (coming soon)]()  
