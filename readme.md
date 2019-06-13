@@ -26,5 +26,7 @@ If you use these resources, please also consider citing:
 [Szczepankiewicz F, Westin, C-F, Nilsson M. Maxwell-compensated design of asymmetric gradient waveforms for tensor-valued diffusion encoding. Magn Reson Med. 2019;00:1–14. https://doi.org/10.1002/mrm.27828](https://onlinelibrary.wiley.com/doi/abs/10.1002/mrm.27828)
 
 
-### Example predicted PNS from STE gradient waveform
+### Example figure
 ![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.jpg)
+
+The example gradient waveform yields spherical diffusion encoding, and taken by itself (ignoring the imaging gradients and the readout) it causes approximately 80% of the allowed PNS. Therefore, this waveform should be usable with respect to the PNS.
