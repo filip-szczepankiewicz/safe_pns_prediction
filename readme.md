@@ -15,10 +15,8 @@ This code aims to use the SAFE model to predict PNS in Siemens MRI systems based
 **Note** that the characterization of the hardware is **not part of the open source code**! These
 parameters must be supplied by the user (as described below) or be requested on the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model).
 
-For more information, contact the authors or go to the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model).
-
 ### How to extract system specific SAFE model parameters
-WIP
+Paramters that are relevant to the SAFE model prediction are found in 'measperm' files, which can be found on the scanner host or in the IDEA simuation environment. These ```.asc``` files have names starting with ```MP_GPA_```, the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model).
 
 ### Reference
 The PNS prediction is based on the SAFE model by Herbank and Gebhardt (ISMRM abstract):  
