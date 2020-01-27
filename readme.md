@@ -16,7 +16,17 @@ This code aims to use the SAFE model to predict PNS in Siemens MRI systems based
 parameters must be supplied by the user (as described below) or be requested on the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model).
 
 ### How to extract system specific SAFE model parameters
-Paramters that are relevant to the SAFE model prediction are found in 'measperm' files, which can be found on the scanner host or in the IDEA simuation environment. These ```.asc``` files have names starting with ```MP_GPA_```, the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model).
+Paramters that are relevant to the SAFE model prediction are found in 'measperm' files, which can be found on the scanner host or in the IDEA simuation environment ```(...\n4\pkg\MrServers\MrMeasSrv\Config\InitMeas\)```. These ```.asc``` files have names starting with ```MP_GPA_```, the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model).
+
+In the framework provided herein, the relevant parameters are mapped to the Matlab structure as follows:
+```'flgSWDStimulationLimit*'``` to ```'stim_limit'```  
+```'flgSWDStimulationThreshold*'``` to ```'stim_thresh'```  
+```'flgSWDTau*[*]'``` to ```'tau*'```  
+```'flgSWDAX[*]'``` to ```'a*'```  
+
+You can transfer them manually and check if you filled in the numbers correctly by calling:  
+```safe_hw_verify(hardware_structure)```  
+using the code in the repository.
 
 ### Reference
 The PNS prediction is based on the SAFE model by Herbank and Gebhardt (ISMRM abstract):  
