@@ -1,5 +1,5 @@
-function [pns, res] = safe_gwf_to_pns(gwf, dt, hw, doPadding)
-% function [pns, res] = safe_gwf_to_pns(gwf, dt, hw, doPadding)
+function [pns, res] = safe_gwf_to_pns(gwf, rf, dt, hw, doPadding)
+% function [pns, res] = safe_gwf_to_pns(gwf, rf, dt, hw, doPadding)
 % 
 % gwf (nx3) in T/m
 % dt  (1x1) in s
@@ -28,6 +28,7 @@ if doPadding
     zp1 = zeros(round(zpt/4/dt),3);
     zp2 = zeros(round(zpt/1/dt),3);
     gwf = [zp1; gwf; zp2];
+    rf  = [zp1(:,1); rf; zp2(:,1)];
 end
 
 safe_hw_check(hw);
@@ -54,6 +55,7 @@ end
 % Export relevant paramters
 res.pns  = pns;
 res.gwf  = gwf;
+res.rf   = rf;
 res.dgdt = dgdt;
 res.dt   = dt;
 res.hw   = hw;
