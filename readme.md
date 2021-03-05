@@ -26,7 +26,6 @@ In the framework provided herein, the relevant parameters are mapped to the Matl
 
 You can transfer them manually and check if you filled in the numbers correctly by calling:  
 ```safe_hw_verify(hardware_structure)```  
-using the code in the repository.
 
 ### Reference
 The PNS prediction is based on the SAFE model by Herbank and Gebhardt (ISMRM abstract):  
