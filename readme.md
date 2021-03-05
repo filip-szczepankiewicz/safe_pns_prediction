@@ -6,8 +6,8 @@ Brigham and Women's Hospital, MA, Boston
 Harvard Medical School, MA, Boston  
 Massachusetts General Hospital, MA, Boston  
 
-The main SAFE-model was coded by Thomas Witzel (twitzel@mgh.harvard.edu)  
-Remaining code was written by Filip Szczepankiewicz (fszczepankiewicz@bwh.harvard.edu)
+The main SAFE-model was written by Thomas Witzel
+Remaining code was written by Filip Szczepankiewicz (filip.szczepankiewicz@med.lu.se)
 
 ### Scope
 This code aims to use the SAFE model to predict PNS in Siemens MRI systems based on any given hardware configuration. This code is not verified or validated in any way, and results should be interpreted with care!
