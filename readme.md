@@ -35,7 +35,7 @@ by Franz X. Herbank and Matthias Gebhardt. Abstract No 2007.
 Proc. Intl. Soc. Mag. Res. Med. 8, 2000, Denver, Colorado, USA](https://cds.ismrm.org/ismrm-2000/PDF7/2007.PDF)
 
 If you use these resources, please consider citing:  
-[Szczepankiewicz F, Westin, C-F, Nilsson M. Maxwell-compensated design of asymmetric gradient waveforms for tensor-valued diffusion encoding. Magn Reson Med. 2019;00:1–14. https://doi.org/10.1002/mrm.27828](https://doi.org/10.1002/mrm.27828)
+[_F. Szczepankiewicz, C-F. Westin, M. Nilsson. Gradient waveform design for tensor-valued encoding in diffusion MRI._ Journal of Neuroscience Methods 348, 2021.](https://www.sciencedirect.com/science/article/pii/S0165027020304301)
 
 
 ### Example figure
