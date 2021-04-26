@@ -19,7 +19,7 @@ function [pns, res] = safe_gwf_to_pns(gwf, rf, dt, hw, doPadding)
 % The code was adapted/expanded by Filip Szczepankiewicz @ LMI
 % BWH, HMS, Boston, MA, USA.
 
-if nargin < 4
+if nargin < 5
     doPadding = 1;
 end
 
