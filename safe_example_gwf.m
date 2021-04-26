@@ -1,5 +1,5 @@
-function [gwf, dt] = safe_example_gwf()
-% function [gwf, dt] = safe_example_gwf()
+function [gwf, rf, dt] = safe_example_gwf()
+% function function [gwf, rf, dt] = safe_example_gwf()
 % Waveform with some frequency matching by Filip Szczepankiewicz.
 %
 % Waveform was optimized in the NOW framework by Jens Sjölund et al.
@@ -91,4 +91,6 @@ gwf = 0.08 * [ % T/m
      0         0         0
     ];
 
+rf = ones(length(gwf),1);
+rf(41:end) = -1;
 
