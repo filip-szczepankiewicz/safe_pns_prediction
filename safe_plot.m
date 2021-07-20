@@ -32,7 +32,7 @@ title(['Predicted PNS (' num2str(max(pnsnorm), '%0.0f') '%)']);
 xlabel (xlabstr)
 ylabel ('Relative stimulation [%]')
 
-h(2) = plot([0 max(t)], [1 1] * max(pns(:)), 'k:');
+h(2) = plot([0 max(t)], [1 1] * max(pnsnorm(:)), 'k:');
 
 h(3) = legend(...
     ['X (' num2str(max(pns(:,1)), '%0.0f') '%)'], ...
