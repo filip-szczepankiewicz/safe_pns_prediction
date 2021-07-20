@@ -13,21 +13,30 @@ end
 
 t  = linspace(0, ttot, size(pns,1));
 
-h = plot(t,pns); 
+pnsnorm = sqrt(sum(pns.^2, 2));
+
+h = plot(...
+    t, pns(:,1), 'r-',...
+    t, pns(:,2), 'g-',...
+    t, pns(:,3), 'b-',...
+    t, pnsnorm , 'k--'...
+    );
+
 hold on; grid on;
 
 ylim([0 120])
 xlim([min(t) max(t)])
 
-title('Predicted PNS');
+title(['Predicted PNS (' num2str(max(pnsnorm), '%0.0f') '%)']);
 
 xlabel (xlabstr)
 ylabel ('Relative stimulation [%]')
 
-h(2) = plot([0 max(t)], [1 1] * max(pns(:)), 'k--');
+h(2) = plot([0 max(t)], [1 1] * max(pns(:)), 'k:');
 
 h(3) = legend(...
     ['X (' num2str(max(pns(:,1)), '%0.0f') '%)'], ...
     ['Y (' num2str(max(pns(:,2)), '%0.0f') '%)'], ...
     ['Z (' num2str(max(pns(:,3)), '%0.0f') '%)'], ...
+    ['nrm (' num2str(max(pnsnorm), '%0.0f') '%)'], ...
     'location', 'best');
