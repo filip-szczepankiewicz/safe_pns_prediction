@@ -48,7 +48,7 @@ for i = 1:size(dgdt,2)
             p = hw.z;
     end
     
-    pns(:,i) = safe_pns_model(dgdt(:,i), dt, p) * hw.look_ahead;
+    pns(:,i) = safe_pns_model(dgdt(:,i), dt, p);
     
 end
 
