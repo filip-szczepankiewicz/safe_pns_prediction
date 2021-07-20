@@ -27,16 +27,15 @@ An example of the hardware structure format can be found in ```safe_example_hw``
 
 ### Reference
 If you use these resources, please consider citing:  
-[_F. Szczepankiewicz, C-F. Westin, M. Nilsson. Gradient waveform design for tensor-valued encoding in diffusion MRI._ Journal of Neuroscience Methods 348, 2021.](https://www.sciencedirect.com/science/article/pii/S0165027020304301)
+[_F. Szczepankiewicz, C-F. Westin, M. Nilsson. Gradient waveform design for tensor-valued encoding in diffusion MRI._ Journal of Neuroscience Methods 348, 2021. https://doi.org/10.1016/j.jneumeth.2020.109007](https://www.sciencedirect.com/science/article/pii/S0165027020304301)  
 
 The PNS prediction is based on the SAFE model by Herbank and Gebhardt (ISMRM abstract):  
 [SAFE-Model - A New Method for Predicting Peripheral Nerve Stimulations in MRI
-by Franz X. Herbank and Matthias Gebhardt. Abstract No 2007. 
-Proc. Intl. Soc. Mag. Res. Med. 8, 2000, Denver, Colorado, USA](https://cds.ismrm.org/ismrm-2000/PDF7/2007.PDF)
+by F.X. Herbank and M. Gebhardt. Abstract No 2007. Proc. Intl. Soc. Mag. Res. Med. 8, 2000, Denver, Colorado, USA](https://cds.ismrm.org/ismrm-2000/PDF7/2007.PDF)
 
 ### Example figure
 ![Example of predicted PNS in arbitrary gradient waveform.](safe_example_figure.jpg)
 
-The example gradient waveform yields spherical diffusion encoding, and taken by itself (ignoring the imaging gradients and the readout) it causes approximately 80% of the allowed PNS, i.e. we predict that this waveform does not exceed the PNS limit. However, it should be analyzed together with the EPI waveform to detect potential interactions between the two. 
+The example gradient waveform yields spherical diffusion encoding, and taken by itself (ignoring the imaging gradients and the readout) it causes approximately 80% of the allowed PNS, i.e. we predict that this waveform does not exceed the PNS limit. However, it should be analyzed together with the EPI waveform to detect potential interactions between the two.  
 
 ### Related resources can be found at the [FWF sequence GIT repository](https://github.com/filip-szczepankiewicz/fwf_seq_resources)
