@@ -14,20 +14,25 @@ function stim = safe_pns_model(dgdt, dt, hw)
 % The main SAFE-model was coded by Thomas Witzel @ Martinos Center,
 % MGH, HMS, Boston, MA, USA.
 % 
-% The code was adapted/expanded by Filip Szczepankiewicz @ LMI
-% BWH, HMS, Boston, MA, USA.
+% The code was adapted/expanded/corrected by Filip Szczepankiewicz @ LMI
+% BWH, HMS, Boston, MA, USA, and Lund University, Sweden.
 
 stim1 = hw.a1 * abs( safe_tau_lowpass(dgdt     , hw.tau1, dt * 1000) );
 stim2 = hw.a2 *      safe_tau_lowpass(abs(dgdt), hw.tau2, dt * 1000)  ;
 stim3 = hw.a3 * abs( safe_tau_lowpass(dgdt     , hw.tau3, dt * 1000) );
 
-stim = (stim1 + stim2 + stim3) / hw.stim_limit * 100 / pi;
+stim = (stim1 + stim2 + stim3) / hw.stim_limit * hw.g_scale * 100; % /pi
 
 % Not sure where something goes awry, probably in the lowpass filter, but
 % compared to the Siemens simulator we are exactly a factor of pi off, so
 % I'm dividing the final result by pi.
 % Note also that the final result is essentially some kind of arbitrary
 % unit. - TW
+
+% UPDATE 210720 - The pi factor was not quite correct. Instead, the correct
+% factor was determined by the gradient scale factor (hw.g_scale, defined 
+% in the .asc file). Thanks to Maxim Zaitsev for supporting this buggfix and 
+% validating that the updated code is accurate. - FSz
 
 end
 
