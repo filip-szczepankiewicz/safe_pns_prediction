@@ -7,6 +7,9 @@ clf
 % Load reponse parameters for example hardware
 hw = safe_example_hw();
 
+% Check if this hw is part of the library (validate hw)
+safe_hw_verify(hw);
+
 % Predict PNS levels
 pns = safe_gwf_to_pns(gwf, rf, dt, hw, 1);
 
