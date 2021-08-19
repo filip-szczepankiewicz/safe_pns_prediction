@@ -14,10 +14,10 @@ Lund University, Sweden
 This code aims to use the SAFE model to predict PNS in Siemens MRI systems based on any given hardware configuration defined by MP_GPA*.asc files. This code may not be accurate, and results should be interpreted with care!
 
 **Note** that hardware specifications are confidential and **not part of this repository**! These
-parameters must be supplied by the user (as described below) or be requested on the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model).
+parameters must be supplied by the user (as described below) or be requested on the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
 
 ### How to extract system specific SAFE model parameters
-Paramters that are relevant to the SAFE model prediction are found in "measurement parameter" files, which can be found on the scanner host or in the IDEA simuation environment (...\n4\pkg\MrServers\MrMeasSrv\Config\InitMeas\). These .asc files have names starting with "MP_GPA_", the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [IDEA forum](https://www.mr-idea.com/communities/idea/results.aspx?k=PNS%20prediction%20in%20Matlab%20using%20the%20SAFE%20model).
+Paramters that are relevant to the SAFE model prediction are found in "measurement parameter" files, which can be found on the scanner host or in the IDEA simuation environment (...\n4\pkg\MrServers\MrMeasSrv\Config\InitMeas\). These .asc files have names starting with "MP_GPA_", the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
 
 In the framework provided herein, the relevant parameters are read from the .asc file to the hardware structure (```hw```) by the function ```hw = safe_hw_from_asc(...)```.  
 
