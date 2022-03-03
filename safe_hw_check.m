@@ -11,10 +11,10 @@ if (abs(hw.x.a1 + hw.x.a2 + hw.x.a3 - 1) > 0.001 || ...
 end
 
 axl = {'x', 'y', 'z'};
+fnl = {'stim_limit', 'stim_thresh', 'tau1', 'tau2', 'tau3', 'a1', 'a2', 'a3', 'g_scale'};
 
 for i = 1:numel(axl)
     axn = axl{i};
-    fnl = fieldnames(hw.(axn));
 
     for j = 1:numel(fnl)
         par = fnl{j};
