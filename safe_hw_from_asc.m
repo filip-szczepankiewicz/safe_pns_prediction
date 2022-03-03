@@ -79,12 +79,10 @@ end
 if ~isempty(hw.dependency)
     warning(['Reading PNS parameters from other system (' hw.name ' is based on ' hw.dependency ')'])
     
-    [a,b,c] = fileparts(fn_asc);
+    [a,b,c]    = fileparts(fn_asc);
     fn_asc_dep = [a filesep hw.dependency c];
-    hw_dep = safe_hw_from_asc(fn_asc_dep, verbose);
-    hw.x = hw_dep.x;
-    hw.y = hw_dep.y;
-    hw.z = hw_dep.z;
+    hw_dep     = safe_hw_from_asc(fn_asc_dep, verbose);
+    hw         = safe_hw_mergeIfNotEmpty(hw, hw_dep);
     
 end
 
