@@ -89,7 +89,8 @@ end
 
 if verbose
     try
-        safe_hw_verify(hw)
+        safe_hw_verify(hw);
+        safe_hw_check(hw);
     catch me
         disp(me.message)
     end
