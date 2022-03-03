@@ -7,6 +7,9 @@ clf
 % Load reponse parameters for example hardware
 hw = safe_example_hw();
 
+% Check if hardware parameters are consistent
+safe_hw_check(hw)
+
 % Check if this hw is part of the library (validate hw)
 safe_hw_verify(hw);
 
