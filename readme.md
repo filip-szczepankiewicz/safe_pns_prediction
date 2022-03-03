@@ -17,7 +17,7 @@ This code aims to use the SAFE model to predict PNS in Siemens MRI systems based
 parameters must be supplied by the user (as described below) or be requested on the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
 
 ### How to extract system specific SAFE model parameters
-Paramters that are relevant to the SAFE model prediction are found in "measurement parameter" files, which can be found on the scanner host or in the IDEA simuation environment (...\n4\pkg\MrServers\MrMeasSrv\Config\InitMeas\). These .asc files have names starting with "MP_GPA_", the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
+Paramters that are relevant to the SAFE model prediction are found in "measurement parameter" files, which can be found on the scanner host or in the IDEA simuation environment (...\n4\pkg\MrServers\MrMeasSrv\Config\InitMeas\ or ...\MIDEA\NX***\Config\MriProduct\Measurement\InitMeas\). These .asc files have names starting with "MP_GPA_", the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
 
 In the framework provided herein, the relevant parameters are read from the .asc file to the hardware structure (```hw```) by the function ```hw = safe_hw_from_asc(...)```.  
 
