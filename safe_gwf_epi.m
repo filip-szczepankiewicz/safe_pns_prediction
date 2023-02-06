@@ -14,11 +14,11 @@ if nargin < 1
     etl = round(128*0.5*0.75);
     n = 200;
     dt = (g/s * 2 + ftt) / n;
-    
+
     [gwf, rf, dt, t] = safe_gwf_epi(g, s, ftt, etl, dt);
-    
+
     plot(t, gwf)
-    
+
     return
 end
 
@@ -28,8 +28,13 @@ trp = safe_gwf_trapezoid(g, s, dt, n);
 
 
 wf = [];
-for i = 1:etl 
-    wf = [wf; (-1)^(i)*trp'];
+for i = 0:etl
+
+    if i == 0
+        wf = [wf; (-1)^(i)*trp'/2];
+    else
+        wf = [wf; (-1)^(i)*trp'];
+    end
 end
 
 gwf = wf * [1 0 0];

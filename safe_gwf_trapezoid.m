@@ -1,4 +1,4 @@
-function gwf = safe_gwf_trapezoid(gamp, slew, dt, n_samp)
+function [gwf, n_ramp_use] = safe_gwf_trapezoid(gamp, slew, dt, n_samp)
 % function gwf = safe_gwf_trapezoid(gamp, slew, dt, n_samp)
 
 wf = nan(1,n_samp);
