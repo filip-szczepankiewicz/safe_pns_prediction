@@ -21,7 +21,7 @@ stim1 = hw.a1 * abs( safe_tau_lowpass(dgdt     , hw.tau1, dt * 1000) );
 stim2 = hw.a2 *      safe_tau_lowpass(abs(dgdt), hw.tau2, dt * 1000)  ;
 stim3 = hw.a3 * abs( safe_tau_lowpass(dgdt     , hw.tau3, dt * 1000) );
 
-stim = (stim1 + stim2 + stim3) / hw.stim_limit * hw.g_scale * 100; % /pi
+stim = (stim1 + stim2 + stim3) / hw.stim_limit * hw.g_scale * 100;
 
 % Not sure where something goes awry, probably in the lowpass filter, but
 % compared to the Siemens simulator we are exactly a factor of pi off, so
@@ -47,12 +47,16 @@ function fw = safe_tau_lowpass(dgdt, tau, dt)
 % The RC lowpass is also appealing because its something Siemens could have
 % easily implemented on their hardware stimulation monitors, so I'm probably
 % pretty close. - TW
+%
+% UPDATE 230206 - There was a factor alpha missing on the first sample; it
+% has now been corrected. Thanks to Oliver Schad for finding this error.
+% - FSz
 
 alpha = dt / (tau + dt);
 
 fw = zeros(size(dgdt));
 
-fw(1) = dgdt(1);
+fw(1) = alpha * dgdt(1);
 
 for s = 2:length(dgdt)
     fw(s) = alpha * dgdt(s) + (1-alpha) * fw(s-1);
