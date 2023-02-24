@@ -5,13 +5,14 @@ function fn_l = safe_create_hw_library(fn_l, fn_lib)
 % information on SAFE model.
 
 if nargin < 1
-    % This funciton searches for all .asc files in a folder, and is not
-    % provided on the git repository.
-    global dir_safe_hw; %#ok<TLEV>
-    
-    if isempty(dir_safe_hw)
-        error('Global variable not found!!!')
-    end
+    % This funciton searches for all .asc files in a folder, to include all
+    % unique files in a list. Note that the hardware specification files
+    % are not shared via GitHub. Note that the function
+    % 'find_files_under_folder' is not shared as part of this repo.
+    % However, you can find it here: 
+    % https://se.mathworks.com/matlabcentral/fileexchange/1378-files-under-folders-fuf
+
+    dir_safe_hw = path_hw_safe;
     
     fn_l = find_files_under_folder([dir_safe_hw filesep '*.asc'], 1, 'detail');
 end

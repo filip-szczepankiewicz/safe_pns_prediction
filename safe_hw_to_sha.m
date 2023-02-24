@@ -30,7 +30,7 @@ end
 
 
 function sha = str_to_sha_dotnet(str) %#ok<DEFNU>
-% Non-java implememntation based on .Net by FSz
+% Original non-java implememntation based on .Net by FSz
 
 sha256hasher = System.Security.Cryptography.SHA256Managed;
 sha256       = uint8(sha256hasher.ComputeHash(uint8(str)));
