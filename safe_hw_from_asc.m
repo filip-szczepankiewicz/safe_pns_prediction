@@ -12,7 +12,7 @@ if nargin < 2 || isempty(verbose)
 end
 
 if nargin < 3 || isempty(mode)
-    mode = 0;
+    mode = -1;
 end
 
 
@@ -33,6 +33,9 @@ switch mode
     case {2, 'CarNS'}
         model  = 'Cardiac';
         prefix = '.CarNS.';
+
+    otherwise
+        error('Mode not recognized!')
 end
 
 
