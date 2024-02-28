@@ -26,7 +26,12 @@ if ~isempty(ind)
     name = hw_lib.name_l{ind};
     variant = hw_lib.var_l(ind);
     sha = hw_lib.sha_l{ind};
-    disp(['Hardware spec matches library: ' name ' (variant ' num2str(variant) ' with SHA: ' sha ')']);
+
+    if ~isfield(hw, 'model')
+        hw.model = 'EMPTY';
+    end
+
+    disp(['Hardware spec matches library: ' name ' (variant ' num2str(variant) ' for "' hw.model '" stimulation model (SHA: ' sha(1:10) '...)']);
 else
     disp('Hardware does not match any in the library!')
 end

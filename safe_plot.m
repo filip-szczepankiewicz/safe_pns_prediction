@@ -40,3 +40,10 @@ h(3) = legend(...
     ['Z (' num2str(max(pns(:,3)), '%0.0f') '%)'], ...
     ['nrm (' num2str(max(pnsnorm), '%0.0f') '%)'], ...
     'location', 'best');
+
+
+% If user has dark theme, revert to light
+try
+    fh = gcf;
+    fh.Theme = 'light';
+end
