@@ -19,7 +19,7 @@ end
 switch mode
     case {-1, 'auto'}
         mode = safe_asc_fn_to_mode(fn_asc);
-        hw = safe_hw_from_gradSys_asc(fn_asc, verbose, mode);
+        hw = safe_hw_from_asc(fn_asc, verbose, mode);
         return
 
     case {0, 'none'}
