@@ -32,6 +32,8 @@ if ~isempty(ind)
     end
 
     disp(['Hardware spec matches library: ' name ' (variant ' num2str(variant) ' for "' hw.model '" stimulation model (SHA: ' sha(1:10) '...)']);
+    
 else
     disp('Hardware does not match any in the library!')
+
 end

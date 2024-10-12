@@ -17,18 +17,24 @@ function stim = safe_pns_model(dgdt, dt, hw)
 % The code was adapted/expanded/corrected by Filip Szczepankiewicz @ LMI
 % BWH, HMS, Boston, MA, USA, and Lund University, Sweden.
 
-stim1 = hw.a1 * abs( safe_tau_lowpass(dgdt     , hw.tau1, dt * 1000) );
-stim2 = hw.a2 *      safe_tau_lowpass(abs(dgdt), hw.tau2, dt * 1000)  ;
-stim3 = hw.a3 * abs( safe_tau_lowpass(dgdt     , hw.tau3, dt * 1000) );
+% Calculate time constant alpha. NOTE the scaling; tau and dt need to be 
+% in the same unit.
+alpha1 = dt / (hw.tau1*1e-3 + dt);
+alpha2 = dt / (hw.tau2*1e-3 + dt);
+alpha3 = dt / (hw.tau3*1e-3 + dt);
 
-stim = (stim1 + stim2 + stim3) / hw.stim_limit * hw.g_scale * 100;
+stim1  = hw.a1 * abs( safe_tau_lowpass(    dgdt , alpha1 ) );
+stim2  = hw.a2 *      safe_tau_lowpass(abs(dgdt), alpha2 )  ;
+stim3  = hw.a3 * abs( safe_tau_lowpass(    dgdt , alpha3 ) );
 
-% Not sure where something goes awry, probably in the lowpass filter, but
-% compared to the Siemens simulator we are exactly a factor of pi off, so
+stim   = (stim1 + stim2 + stim3) / hw.stim_limit * hw.g_scale * 100;
+
+% Pre Git - Not sure where something goes awry, probably in the lowpass filter, 
+% but compared to the Siemens simulator we are exactly a factor of pi off, so
 % I'm dividing the final result by pi.
 % Note also that the final result is essentially some kind of arbitrary
-% unit. - TW
-
+% unit. - TW - RESOLVED, see below. - FSz
+% 
 % UPDATE 210720 - The pi factor was not quite correct. Instead, the correct
 % factor was determined by the gradient scale factor (hw.g_scale, defined 
 % in the .asc file). Thanks to Maxim Zaitsev for supporting this buggfix and 
@@ -37,11 +43,11 @@ stim = (stim1 + stim2 + stim3) / hw.stim_limit * hw.g_scale * 100;
 end
 
 
-function fw = safe_tau_lowpass(dgdt, tau, dt)
-% function fw = safe_tau_lowpass(dgdt, tau, dt)
+function fw = safe_tau_lowpass(dgdt, alpha)
+% function fw = safe_tau_lowpass(dgdt, alpha)
 %
-% Apply a RC lowpass filter with time constant tau = RC to data with sampling
-% interval dt. NOTE tau and dt need to be in the same unit (i.e. s or ms)
+% Apply a RC lowpass filter with time constant alpha derived from tau = RC to data 
+% with sampling interval dt. 
 % The SAFE model abstract by Hebrank et.al. just says "Lowpass with time-constant tau",
 % so I decided to make the most simple filter possible here.
 % The RC lowpass is also appealing because its something Siemens could have
@@ -51,15 +57,18 @@ function fw = safe_tau_lowpass(dgdt, tau, dt)
 % UPDATE 230206 - There was a factor alpha missing on the first sample; it
 % has now been corrected. Thanks to Oliver Schad for finding this error.
 % - FSz
+%
+% UPDATE 241012 - I tried to rewrite the model to only use one for loop per
+% axis, however, after several attempts, this did not improve performance 
+% in Matlab. Thus, a few things have changed, but it is still 3x3 for loops
+% in total. - FSz
 
-alpha = dt / (tau + dt);
-
-fw = zeros(size(dgdt));
-
+n     = length(dgdt);
+fw    = zeros(n,1);
 fw(1) = alpha * dgdt(1);
 
-for s = 2:length(dgdt)
-    fw(s) = alpha * dgdt(s) + (1-alpha) * fw(s-1);
+for i = 2:n
+    fw(i) = alpha * dgdt(i) + (1-alpha) * fw(i-1);
 end
 
 end

@@ -1,5 +1,10 @@
 function [gwf, n_ramp_use] = safe_gwf_trapezoid(gamp, slew, dt, n_samp)
-% function gwf = safe_gwf_trapezoid(gamp, slew, dt, n_samp)
+% function [gwf, n_ramp_use] = safe_gwf_trapezoid(gamp, slew, dt, n_samp)
+%
+% gamp is the maximal gradient amplitude in T/m
+% slew is the maximal slew rate in T/m/s
+% dt is the sample dwell time in s
+% n_samp is the number of samples in the waveform
 
 wf = nan(1,n_samp);
 

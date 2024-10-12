@@ -46,4 +46,5 @@ h(3) = legend(...
 try
     fh = gcf;
     fh.Theme = 'light';
+catch me
 end
