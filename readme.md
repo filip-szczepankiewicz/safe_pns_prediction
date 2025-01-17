@@ -1,19 +1,22 @@
 ## Prediction of PNS in Siemens MRI systems (SAFE model)
 
 Filip Szczepankiewicz (filip.szczepankiewicz@med.lu.se) and Thomas Witzel  
-  
+
+Medical Radiation Physics
+Lund University, Sweden
+
 Brigham and Women's Hospital, MA, Boston  
 Harvard Medical School, MA, Boston  
 Massachusetts General Hospital, MA, Boston  
-Lund University, Sweden
+
 
 #### Additional contributions
-* Thanks to Maxim Zaitsev for debugging/validating the "1/pi" error as well as for the Java-based SHA code.
+* Thanks to Maxim Zaitsev for debugging/validating the "1/pi error" as well as for the Java-based SHA code (which replaces the .NET implementation).
 
 ### Scope
 This code aims to use the SAFE model to predict PNS in Siemens MRI systems based on any given hardware configuration defined by MP_GPA*.asc files. This code may not be accurate, and results should be interpreted with care!
 
-**Note** that hardware specifications are confidential and **not part of this repository**! These
+**Note** that hardware specifications are confidential and are **not shared as part of this repository**! These
 parameters must be supplied by the user (as described below) or be requested on the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
 
 ### How to extract system specific SAFE model parameters
