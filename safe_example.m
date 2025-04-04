@@ -5,7 +5,7 @@ clf
 [gwf, rf, dt] = safe_example_gwf;
 
 % Load reponse parameters for example hardware
-hw = safe_example_hw();
+hw = safe_example_hw_peripheral();
 
 % Check if hardware parameters are consistent
 safe_hw_check(hw)

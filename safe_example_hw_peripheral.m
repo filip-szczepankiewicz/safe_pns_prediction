@@ -4,7 +4,7 @@ function hw = safe_example_hw()
 % SAFE model parameters for EXAMPLE scanner hardware (not a real scanner).
 % See comments for units.
 
-hw.name          = 'MP_GPA_EXAMPLE';
+hw.name          = 'MP_GPA_EXAMPLE_PNS';
 hw.model         = 'Peripheral';
 hw.checksum      = '1234567890';
 hw.dependency    = '';
