@@ -17,6 +17,11 @@ function stim = safe_pns_model(dgdt, dt, hw)
 % The code was adapted/expanded/corrected by Filip Szczepankiewicz @ LMI
 % BWH, HMS, Boston, MA, USA, and Lund University, Sweden.
 
+if all(dgdt(:)==0)
+    stim = zeros(size(dgdt));
+    return
+end
+
 % Calculate time constant alpha. NOTE the scaling; tau and dt need to be 
 % in the same unit.
 alpha1 = dt / (hw.tau1*1e-3 + dt);
