@@ -14,4 +14,7 @@ elseif strcmp('MP_GradSys', b(1:10))
     % Newer format from approx 2023
     mode = [1 2];
 
+else
+    mode = nan;
+
 end

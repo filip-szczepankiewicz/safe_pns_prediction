@@ -27,7 +27,7 @@ hold on; grid on;
 ylim([0 120])
 xlim([min(t) max(t)])
 
-title(['Predicted PNS (' num2str(max(pnsnorm), '%0.0f') '%)']);
+title(['Predicted stimulation (' num2str(max(pnsnorm), '%0.0f') '%)']);
 
 xlabel (xlabstr)
 ylabel ('Relative stimulation [%]')

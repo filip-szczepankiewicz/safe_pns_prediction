@@ -16,8 +16,8 @@ function [pns, res] = safe_gwf_to_pns(gwf, rf, dt, hw, doPadding)
 % The main SAFE-model was coded by Thomas Witzel @ Martinos Center,
 % MGH, HMS, Boston, MA, USA.
 % 
-% The code was adapted/expanded by Filip Szczepankiewicz @ LMI
-% BWH, HMS, Boston, MA, USA.
+% The code was adapted/expanded/corrected by Filip Szczepankiewicz @ LMI
+% BWH, HMS, Boston, MA, USA, and Lund Universtiy, Sweden.
 
 if nargin < 5
     doPadding = 1;

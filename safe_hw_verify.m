@@ -10,7 +10,8 @@ function [name, variant, sha] = safe_hw_verify(hw, fn_lib)
 % safe_hw_verify(safe_example_hw());
 %
 % Output:
-% Hardware spec matches library: MP_GPA_EXAMPLE (variant 1 with SHA: D7B6EE869BEA427ECCD34CF91A65711B0B05203113F07FF0EE7D74FF54089DC5)
+% Hardware spec matches library: MP_GPA_EXAMPLE 
+% (variant 1 with SHA: D7B6EE869BEA427ECCD34CF91A65711B0B05203113F07FF0EE7D74FF54089DC5)
 
 if nargin < 2
     fn_lib = safe_hw_lib_fn;

@@ -11,22 +11,30 @@ Massachusetts General Hospital, MA, Boston
 
 
 #### Additional contributions
-* Thanks to Maxim Zaitsev for debugging/validating the "1/pi error" as well as for the Java-based SHA code (which replaces the .NET implementation).
+* Thanks to Maxim Zaitsev for debugging the "1/pi error" and the Java-based SHA (replacing the .NET-based variant).
 
 ### Scope
-This code aims to use the SAFE model to predict PNS in Siemens MRI systems based on any given hardware configuration defined by MP_GPA*.asc files. This code may not be accurate, and results should be interpreted with care!
+This code enables prediction of the cardiac and peripheral stimulation of any given hardware and pulse sequence at Siemsns MRI scanners. 
+We use the SAFE model and hardware configuration defined by MP_GPA*.asc files. 
 
-**Note** that hardware specifications are confidential and are **not shared as part of this repository**! These
+**NOTE 1** This code may be inaccurate; results should be interpreted with care!
+
+**NOTE 2** Hardware specifications are confidential and are **not shared as part of this repository**! These
 parameters must be supplied by the user (as described below) or be requested on the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
 
-### How to extract system specific SAFE model parameters
-Paramters that are relevant to the SAFE model prediction are found in "measurement parameter" files, which can be found on the scanner host or in the IDEA simuation environment (...\n4\pkg\MrServers\MrMeasSrv\Config\InitMeas\ or ...\MIDEA\NX***\Config\MriProduct\Measurement\InitMeas\). These .asc files have names starting with "MP_GPA_", the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
+### Extracting system specific SAFE model parameters
+Paramters that are relevant to the SAFE model prediction are found in "measurement parameter" files, which can be found on the scanner host or in the IDEA simuation environment
+
+* n4-platform: ...\n4\pkg\MrServers\MrMeasSrv\Config\InitMeas\ 
+* nx-platform: ...\MIDEA\NX***\Config\MriProduct\Measurement\InitMeas\ 
+
+These .asc files have names starting with "MP_GPA_", the rest of the file name depends on the gradient system. The gradient system name can be found by calling ```imprint``` at the scanner console. More details are provided via the [MAGNETOM forum](https://www.magnetom.net/t/safe-peripheral-nerve-stimulation-prediction-in-matlab/4681).
 
 In the framework provided herein, the relevant parameters are read from the .asc file to the hardware structure (```hw```) by the function ```hw = safe_hw_from_asc(...)```.  
 
 You can also create the hardware structure manually and check if you filled in the numbers correctly by calling ```safe_hw_verify(hw)```.  
 
-An example of the hardware structure format can be found in ```safe_example_hw``` and an end-to-end example script can be found in ```safe_example```.
+An example of the hardware structure format can be found in ```safe_example_hw_peripheral()```, and ```safe_example_hw_cardiac()```. An end-to-end example script can be found in ```safe_example```.
 
 ### Reference
 If you use these resources, please consider citing:  

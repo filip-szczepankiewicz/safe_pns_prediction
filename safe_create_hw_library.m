@@ -8,13 +8,13 @@ if nargin < 1
     % This funciton searches for all .asc files in a folder, to include all
     % unique files in a list. Note that the hardware specification files
     % are not shared via GitHub. Note that the function
-    % 'find_files_under_folder' is not shared as part of this repo.
+    % 'fix.findFiles' is not shared as part of this repo.
     % However, you can find it here:
-    % https://se.mathworks.com/matlabcentral/fileexchange/1378-files-under-folders-fuf
+    % https://github.com/filip-szczepankiewicz/fix_matlab
 
     dir_safe_hw = path_hw_safe;
 
-    fn_l = find_files_under_folder([dir_safe_hw filesep '*.asc'], 1, 'detail');
+    fn_l = fix.findFiles([dir_safe_hw filesep], '*.asc');
 end
 
 if nargin < 2
@@ -32,6 +32,10 @@ for i = 1:numel(fn_l)
     % Decide on the interpreter version/mode and create a structure that
     % has all necessary hardware PNS parameters.
     mode = safe_asc_fn_to_mode(fn_l{i});
+
+    if isnan(mode)
+        continue
+    end
 
     for j = 1:numel(mode)
         hw   = safe_hw_from_asc(fn_l{i}, 0, mode(j));
