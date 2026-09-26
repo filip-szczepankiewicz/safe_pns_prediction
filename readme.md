@@ -14,7 +14,7 @@ Massachusetts General Hospital, MA, Boston
 * Thanks to Maxim Zaitsev for debugging the "1/pi error" and the Java-based SHA (replacing the .NET-based variant).
 
 ### Scope
-This code enables prediction of the cardiac and peripheral stimulation of any given hardware and pulse sequence at Siemsns MRI scanners. 
+This code enables prediction of the cardiac and peripheral stimulation of any given hardware and pulse sequence at Siemens MRI scanners. 
 We use the SAFE model and hardware configuration defined by MP_GPA*.asc files. 
 
 **NOTE 1** This code may be inaccurate; results should be interpreted with care!
